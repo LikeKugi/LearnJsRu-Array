@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sumInput() {
+
+            this.begining = function() {
+                this.a = 0;
+                this.arr = [];
+                this.arr.length = 0;
+                this.sum = 0;
+                this.read();
+            }
+
+            this.read = function() {
+                this.a = prompt('a = ', 0); 
+                this.checkingForValid();
+            },
+
+            this.checkingForValid = function() {
+                
+                if (isFinite(this.a)) {
+                    //console.log(typeof this.a + this.a);
+                    this.arr.push(+this.a);
+                    this.read();
+                } else  this.summing();
+            }
+
+            this.summing = function() {
+                for (let key = 0; key < this.arr.length; key++) {
+                    //console.log(this.arr[key]);
+                    this.sum += this.arr[key];
+                }
+                alert (`sum = ${this.sum}`);
+            }
+
+        }
+
+        let inputs = new sumInput();
+        inputs.begining();
+    </script>
+</body>
+</html>
